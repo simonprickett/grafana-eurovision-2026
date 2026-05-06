@@ -1,8 +1,8 @@
 # Eurovision 2026 Grand Final — Voting Rules
 
-## Countries & Voting Blocs
+## Voting Countries
 
-**35 countries** participate in the Grand Final. Each country votes, plus there is an additional "Rest of the World" televote bloc representing non-participating countries. All blocs contribute to the final scores.
+**35 countries** participate in the Grand Final. Each country votes, plus there is an additional "Rest of the World" televote representing non-participating countries. All contribute to the final scores.
 
 ## Two Independent Voting Streams
 
@@ -34,7 +34,7 @@ A single country can give a song a maximum of **24 combined points** — 12 from
 
 ## Final Score & Ranking
 
-Jury points and televote points from all blocs are summed into a **single combined total**. The song with the highest total wins.
+Jury points and televote points from all voting countries are summed into a **single combined total**. The song with the highest total wins.
 
 ## Rest of the World Televote
 
@@ -52,8 +52,8 @@ The Rest of the World (RoW) vote was introduced in 2023 and continues in 2026. I
 
 - The aggregate results from all RoW voters are compiled and their top 10 songs are identified
 - Points are allocated using the same 12/10/8/7/6/5/4/3/2/1 scale
-- These points count as if they were cast by **one additional participating country** — a single extra voting bloc added to the scoreboard alongside the 35 national blocs
-- The RoW bloc is announced during the results show in the same way as national results
+- These points count as if they were cast by **one additional participating country** — a single extra entry on the scoreboard alongside the 35 participating countries
+- The Rest of World result is announced during the results show in the same way as national results
 
 ## Tiebreaker Rules
 

@@ -8,15 +8,15 @@ One row per points award. Only rows where points were actually awarded are neede
 
 | Column | Type | Description |
 |--------|------|-------------|
-| `voting_bloc` | string | The country casting the vote, or `Rest of World` |
+| `voting_country` | string | The country casting the vote, or `Rest of World` |
 | `recipient_country` | string | The country whose song is receiving the points |
 | `vote_type` | string | Either `jury` or `televote` |
 | `points` | integer | Points awarded: one of 1, 2, 3, 4, 5, 6, 7, 8, 10, 12 |
 
 ## Example Rows
 
-| voting_bloc | recipient_country | vote_type | points |
-|-------------|-------------------|-----------|--------|
+| voting_country | recipient_country | vote_type | points |
+|----------------|-------------------|-----------|--------|
 | France | Italy | jury | 12 |
 | France | Sweden | jury | 10 |
 | France | Italy | televote | 8 |
@@ -24,7 +24,7 @@ One row per points award. Only rows where points were actually awarded are neede
 
 ## Volume
 
-With 36 voting blocs (35 countries + Rest of World), 2 vote types each, and up to 10 recipients per bloc per type, the sheet will have a maximum of **720 rows**.
+With 36 voting countries (35 countries + Rest of World), 2 vote types each, and up to 10 recipients per voting country per type, the sheet will have a maximum of **720 rows**.
 
 ## Example Grafana Queries
 
@@ -41,12 +41,12 @@ FROM votes
 WHERE recipient_country = 'Italy'
 GROUP BY vote_type
 
--- Which blocs awarded 12 points to a given song
-SELECT voting_bloc, vote_type
+-- Which countries awarded 12 points to a given song
+SELECT voting_country, vote_type
 FROM votes
 WHERE recipient_country = 'Italy' AND points = 12
 ```
 
 ## Data Entry
 
-Rows are appended as results are announced during the show. Each voting bloc announces jury points live, with televote points aggregated and revealed separately — so jury rows and televote rows will be entered in two distinct phases during the evening.
+Rows are appended as results are announced during the show. Each voting country announces jury points live, with televote points aggregated and revealed separately — so jury rows and televote rows will be entered in two distinct phases during the evening.
