@@ -1,177 +1,187 @@
 voting_country,recipient_country,vote_type,points
+United Kingdom,Portugal,jury,12
+United Kingdom,Bulgaria,jury,10
+United Kingdom,Armenia,jury,8
+United Kingdom,France,jury,7
+United Kingdom,Finland,jury,6
+United Kingdom,Ukraine,jury,5
+United Kingdom,Czechia,jury,4
+United Kingdom,Sweden,jury,3
+United Kingdom,Belgium,jury,2
+United Kingdom,Italy,jury,1
+United Kingdom,Australia,televote,12
+United Kingdom,Armenia,televote,10
+United Kingdom,Belgium,televote,8
+United Kingdom,Estonia,televote,7
+United Kingdom,Finland,televote,6
+United Kingdom,Luxembourg,televote,5
+United Kingdom,Sweden,televote,4
+United Kingdom,Malta,televote,3
+United Kingdom,San Marino,televote,2
+United Kingdom,Italy,televote,1
+Ukraine,Finland,jury,12
+Ukraine,Latvia,jury,10
+Ukraine,Montenegro,jury,8
+Ukraine,France,jury,7
+Ukraine,Armenia,jury,6
+Ukraine,Denmark,jury,5
+Ukraine,Italy,jury,4
+Ukraine,Germany,jury,3
+Ukraine,San Marino,jury,2
+Ukraine,Czechia,jury,1
+Ukraine,Estonia,televote,12
+Ukraine,Germany,televote,10
+Ukraine,Bulgaria,televote,8
+Ukraine,Belgium,televote,7
+Ukraine,Israel,televote,6
+Ukraine,Serbia,televote,5
+Ukraine,Greece,televote,4
+Ukraine,Montenegro,televote,3
+Ukraine,France,televote,2
+Ukraine,Australia,televote,1
 Israel,Ukraine,jury,12
-Israel,Italy,jury,10
-Israel,Malta,jury,8
-Israel,Serbia,jury,7
-Israel,Montenegro,jury,6
+Israel,Lithuania,jury,10
+Israel,Montenegro,jury,8
+Israel,Bulgaria,jury,7
+Israel,Italy,jury,6
 Israel,Belgium,jury,5
-Israel,Luxembourg,jury,4
-Israel,Estonia,jury,3
-Israel,Latvia,jury,2
-Israel,San Marino,jury,1
-Israel,Greece,televote,12
-Israel,Italy,televote,10
-Israel,Serbia,televote,8
-Israel,Estonia,televote,7
-Israel,Czechia,televote,6
-Israel,Lithuania,televote,5
-Israel,Denmark,televote,4
-Israel,Germany,televote,3
-Israel,Belgium,televote,2
-Israel,Malta,televote,1
-Rest of World,Lithuania,televote,12
-Rest of World,Germany,televote,10
-Rest of World,Israel,televote,8
-Rest of World,Australia,televote,7
-Rest of World,France,televote,6
-Rest of World,Malta,televote,5
-Rest of World,Armenia,televote,4
-Rest of World,Italy,televote,3
-Rest of World,Estonia,televote,2
-Rest of World,Greece,televote,1
-Estonia,Montenegro,jury,12
-Estonia,Belgium,jury,10
-Estonia,Lithuania,jury,8
-Estonia,Malta,jury,7
-Estonia,Finland,jury,6
-Estonia,Portugal,jury,5
-Estonia,Sweden,jury,4
-Estonia,Australia,jury,3
-Estonia,Israel,jury,2
-Estonia,Czechia,jury,1
-Estonia,Finland,televote,12
-Estonia,Sweden,televote,10
-Estonia,Denmark,televote,8
-Estonia,Lithuania,televote,7
-Estonia,Portugal,televote,6
-Estonia,Ukraine,televote,5
-Estonia,Malta,televote,4
-Estonia,San Marino,televote,3
-Estonia,Australia,televote,2
-Estonia,Bulgaria,televote,1
-Norway,Armenia,jury,12
-Norway,Denmark,jury,10
-Norway,Lithuania,jury,8
-Norway,Serbia,jury,7
-Norway,Italy,jury,6
-Norway,Belgium,jury,5
-Norway,San Marino,jury,4
-Norway,Portugal,jury,3
-Norway,Czechia,jury,2
-Norway,Georgia,jury,1
-Norway,Portugal,televote,12
-Norway,Armenia,televote,10
-Norway,Israel,televote,8
-Norway,Germany,televote,7
-Norway,Czechia,televote,6
-Norway,Luxembourg,televote,5
-Norway,Sweden,televote,4
-Norway,Estonia,televote,3
-Norway,Australia,televote,2
-Norway,Malta,televote,1
-Denmark,Lithuania,jury,12
-Denmark,Georgia,jury,10
-Denmark,Montenegro,jury,8
-Denmark,Italy,jury,7
-Denmark,Czechia,jury,6
-Denmark,Israel,jury,5
-Denmark,Luxembourg,jury,4
-Denmark,Australia,jury,3
-Denmark,San Marino,jury,2
-Denmark,Malta,jury,1
-Denmark,Portugal,televote,12
-Denmark,Latvia,televote,10
-Denmark,Bulgaria,televote,8
-Denmark,Sweden,televote,7
-Denmark,Serbia,televote,6
-Denmark,Czechia,televote,5
-Denmark,Germany,televote,4
-Denmark,Estonia,televote,3
-Denmark,Montenegro,televote,2
-Denmark,Ukraine,televote,1
+Israel,Sweden,jury,4
+Israel,Georgia,jury,3
+Israel,Greece,jury,2
+Israel,Estonia,jury,1
+Israel,Sweden,televote,12
+Israel,Belgium,televote,10
+Israel,Australia,televote,8
+Israel,Serbia,televote,7
+Israel,Finland,televote,6
+Israel,Georgia,televote,5
+Israel,Ukraine,televote,4
+Israel,San Marino,televote,3
+Israel,Bulgaria,televote,2
+Israel,Italy,televote,1
+Greece,France,jury,12
+Greece,Lithuania,jury,10
+Greece,San Marino,jury,8
+Greece,Israel,jury,7
+Greece,Denmark,jury,6
+Greece,Serbia,jury,5
+Greece,Portugal,jury,4
+Greece,Estonia,jury,3
+Greece,United Kingdom,jury,2
+Greece,Belgium,jury,1
+Greece,Portugal,televote,12
+Greece,San Marino,televote,10
+Greece,Denmark,televote,8
+Greece,Montenegro,televote,7
+Greece,Finland,televote,6
+Greece,Sweden,televote,5
+Greece,Lithuania,televote,4
+Greece,Italy,televote,3
+Greece,France,televote,2
+Greece,Ukraine,televote,1
+Latvia,Serbia,jury,12
+Latvia,Germany,jury,10
+Latvia,Australia,jury,8
+Latvia,Finland,jury,7
+Latvia,Sweden,jury,6
+Latvia,Ukraine,jury,5
+Latvia,Israel,jury,4
+Latvia,France,jury,3
+Latvia,Belgium,jury,2
+Latvia,Estonia,jury,1
+Latvia,Norway,televote,12
+Latvia,Sweden,televote,10
+Latvia,Germany,televote,8
+Latvia,Estonia,televote,7
+Latvia,San Marino,televote,6
+Latvia,Luxembourg,televote,5
+Latvia,Israel,televote,4
+Latvia,Lithuania,televote,3
+Latvia,Czechia,televote,2
+Latvia,France,televote,1
 Finland,Czechia,jury,12
-Finland,Estonia,jury,10
+Finland,France,jury,10
 Finland,Montenegro,jury,8
-Finland,Greece,jury,7
-Finland,Luxembourg,jury,6
-Finland,France,jury,5
-Finland,Georgia,jury,4
-Finland,Bulgaria,jury,3
+Finland,Sweden,jury,7
+Finland,Georgia,jury,6
+Finland,Norway,jury,5
+Finland,Latvia,jury,4
+Finland,Italy,jury,3
 Finland,Israel,jury,2
-Finland,Denmark,jury,1
-Finland,Serbia,televote,12
-Finland,Belgium,televote,10
-Finland,Malta,televote,8
-Finland,Germany,televote,7
-Finland,Armenia,televote,6
-Finland,Norway,televote,5
-Finland,Australia,televote,4
-Finland,Greece,televote,3
-Finland,Estonia,televote,2
-Finland,Italy,televote,1
-San Marino,Israel,jury,12
-San Marino,Germany,jury,10
-San Marino,United Kingdom,jury,8
-San Marino,Sweden,jury,7
-San Marino,Italy,jury,6
-San Marino,Greece,jury,5
-San Marino,Malta,jury,4
-San Marino,Belgium,jury,3
-San Marino,Denmark,jury,2
-San Marino,Australia,jury,1
-San Marino,Greece,televote,12
-San Marino,Ukraine,televote,10
-San Marino,Israel,televote,8
-San Marino,Latvia,televote,7
-San Marino,Finland,televote,6
-San Marino,Georgia,televote,5
-San Marino,Portugal,televote,4
-San Marino,Norway,televote,3
-San Marino,Bulgaria,televote,2
-San Marino,Germany,televote,1
-Czechia,Finland,jury,12
-Czechia,Sweden,jury,10
-Czechia,Serbia,jury,8
-Czechia,France,jury,7
-Czechia,Italy,jury,6
-Czechia,Germany,jury,5
-Czechia,Lithuania,jury,4
-Czechia,Belgium,jury,3
-Czechia,Norway,jury,2
-Czechia,Latvia,jury,1
-Czechia,Georgia,televote,12
-Czechia,Belgium,televote,10
-Czechia,Malta,televote,8
-Czechia,Germany,televote,7
-Czechia,Greece,televote,6
-Czechia,Luxembourg,televote,5
-Czechia,Montenegro,televote,4
-Czechia,Denmark,televote,3
-Czechia,United Kingdom,televote,2
-Czechia,Latvia,televote,1
-Belgium,Germany,jury,12
-Belgium,Latvia,jury,10
-Belgium,Serbia,jury,8
-Belgium,Portugal,jury,7
-Belgium,Estonia,jury,6
-Belgium,United Kingdom,jury,5
-Belgium,Italy,jury,4
-Belgium,Lithuania,jury,3
-Belgium,Finland,jury,2
-Belgium,Norway,jury,1
-Belgium,Greece,televote,12
-Belgium,Finland,televote,10
-Belgium,Israel,televote,8
-Belgium,Armenia,televote,7
-Belgium,Sweden,televote,6
-Belgium,Germany,televote,5
-Belgium,Ukraine,televote,4
-Belgium,Estonia,televote,3
-Belgium,Georgia,televote,2
+Finland,Ukraine,jury,1
+Finland,Czechia,televote,12
+Finland,Malta,televote,10
+Finland,Luxembourg,televote,8
+Finland,Belgium,televote,7
+Finland,Australia,televote,6
+Finland,Bulgaria,televote,5
+Finland,United Kingdom,televote,4
+Finland,Denmark,televote,3
+Finland,Latvia,televote,2
+Finland,Serbia,televote,1
+Czechia,Italy,jury,12
+Czechia,United Kingdom,jury,10
+Czechia,Portugal,jury,8
+Czechia,Lithuania,jury,7
+Czechia,Malta,jury,6
+Czechia,Georgia,jury,5
+Czechia,Montenegro,jury,4
+Czechia,Armenia,jury,3
+Czechia,Bulgaria,jury,2
+Czechia,Sweden,jury,1
+Czechia,United Kingdom,televote,12
+Czechia,San Marino,televote,10
+Czechia,Greece,televote,8
+Czechia,Bulgaria,televote,7
+Czechia,Germany,televote,6
+Czechia,Latvia,televote,5
+Czechia,Estonia,televote,4
+Czechia,Lithuania,televote,3
+Czechia,Armenia,televote,2
+Czechia,Georgia,televote,1
+Switzerland,Luxembourg,jury,12
+Switzerland,Ukraine,jury,10
+Switzerland,Denmark,jury,8
+Switzerland,United Kingdom,jury,7
+Switzerland,Bulgaria,jury,6
+Switzerland,Portugal,jury,5
+Switzerland,Georgia,jury,4
+Switzerland,Serbia,jury,3
+Switzerland,Estonia,jury,2
+Switzerland,Czechia,jury,1
+Switzerland,Greece,televote,12
+Switzerland,Ukraine,televote,10
+Switzerland,Denmark,televote,8
+Switzerland,Malta,televote,7
+Switzerland,Luxembourg,televote,6
+Switzerland,Armenia,televote,5
+Switzerland,Norway,televote,4
+Switzerland,Germany,televote,3
+Switzerland,Lithuania,televote,2
+Switzerland,Portugal,televote,1
+Belgium,Czechia,jury,12
+Belgium,Israel,jury,10
+Belgium,Germany,jury,8
+Belgium,France,jury,7
+Belgium,Australia,jury,6
+Belgium,Serbia,jury,5
+Belgium,Norway,jury,4
+Belgium,Bulgaria,jury,3
+Belgium,Montenegro,jury,2
+Belgium,Luxembourg,jury,1
+Belgium,Bulgaria,televote,12
+Belgium,Montenegro,televote,10
+Belgium,Denmark,televote,8
+Belgium,Sweden,televote,7
+Belgium,Luxembourg,televote,6
+Belgium,Ukraine,televote,5
+Belgium,Estonia,televote,4
+Belgium,Georgia,televote,3
+Belgium,Malta,televote,2
 Belgium,Latvia,televote,1
-France,Bulgaria,jury,3
+France,Lithuania,jury,3
 France,Malta,jury,2
-France,Estonia,jury,1
-France,Estonia,televote,3
-France,Georgia,televote,2
-France,Latvia,televote,1
+France,Ukraine,jury,1
+France,Montenegro,televote,3
+France,Sweden,televote,2
+France,Malta,televote,1
