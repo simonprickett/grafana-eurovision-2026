@@ -8,8 +8,8 @@ One row per points award. Only rows where points were actually awarded are neede
 
 | Column | Type | Description |
 |--------|------|-------------|
-| `voting_country` | string | The country casting the vote, or `Rest of World` |
-| `recipient_country` | string | The country whose song is receiving the points |
+| `voting_country` | string | The country casting the vote, or `Rest of World`. Includes all 35 participating countries — both finalists and countries eliminated in the semi-finals — as all participate in the final vote. |
+| `recipient_country` | string | The country whose song is receiving the points. Only the 26 finalists appear here — eliminated countries cannot receive votes. |
 | `vote_type` | string | Either `jury` or `televote` |
 | `points` | integer | Points awarded: one of 1, 2, 3, 4, 5, 6, 7, 8, 10, 12 |
 
@@ -24,7 +24,7 @@ One row per points award. Only rows where points were actually awarded are neede
 
 ## Volume
 
-With 36 voting countries (35 countries + Rest of World), 2 vote types each, and up to 10 recipients per voting country per type, the sheet will have a maximum of **720 rows**.
+With 36 voting countries (35 participating countries + Rest of World), 2 vote types each, and up to 10 recipients per voting country per type, the sheet will have a maximum of **720 rows**. Note that Rest of World casts a televote only, so the true maximum is 710 rows.
 
 ## Example Grafana Queries
 
