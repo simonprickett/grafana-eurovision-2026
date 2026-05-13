@@ -2,7 +2,7 @@
 
 The Google Sheets spreadsheet is the raw data source for the Grafana dashboard. It uses a long/tidy format optimised for SQL querying — no totals, formatting, or computed columns. All aggregation happens in Grafana.
 
-## Schema
+## Votes Schema
 
 One row per points award. Only rows where points were actually awarded are needed — no zero or blank rows.
 
@@ -50,3 +50,21 @@ WHERE recipient_country = 'Italy' AND points = 12
 ## Data Entry
 
 Rows are appended as results are announced during the show. Each voting country announces jury points live, with televote points aggregated and revealed separately — so jury rows and televote rows will be entered in two distinct phases during the evening.
+
+## Running Order Schema
+
+A separate sheet (`running-order.csv`) lists the finalists in performance order along with a YouTube video ID for each song. One row per finalist.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `running_order` | integer | Position in the running order of the final (1 = performs first). Numbers may be non-contiguous if countries are eliminated after the running order is drawn — gaps preserve the originally drawn positions. |
+| `country` | string | The participating country. Matches values used in `recipient_country` in the votes sheet. |
+| `youtube_id` | string | YouTube video ID for the country's official music video (the `v=` parameter from a YouTube URL). Prefix with `https://www.youtube.com/watch?v=` to construct a full URL, or `https://www.youtube.com/embed/` to embed. |
+
+### Example Rows
+
+| running_order | country | youtube_id |
+|---------------|---------|------------|
+| 1 | Luxembourg | DmVfJSRqgnI |
+| 2 | Israel | xWCnWSoG8nI |
+| 4 | United Kingdom | niMKvJ-Itq8 |
