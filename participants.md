@@ -38,4 +38,4 @@
 | Finalist | Sweden | Felicia | My System | ![Felicia](images/sweden.webp) |
 | Eliminated | Switzerland | Veronica Fusaro | Alice | |
 | Finalist | Ukraine | Leléka | Ridnym | ![Leléka](images/ukraine.webp) |
-| Finalist | United Kingdom | Look Mum No Computer | Eins, Zwei, Drei | ![Look Mum No Computer](images/united-kingdom.webp) |
+| Finalist | United Kingdom | Look Mum No Computer | Eins, Zwei, Drei | ![Look Mum No Computer](images/united_kingdom.webp) |
