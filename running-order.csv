@@ -1,26 +1,26 @@
-running_order,country,youtube_id,now_playing
-1,Denmark,xKzEP9dwoss,
-2,Germany,AzvRc3eH_rA,
-3,Israel,xWCnWSoG8nI,
-4,Belgium,9sfI4g6DWTU,
-5,Albania,b9AdRrA554o,
-6,Greece,NGwNTd_DA9s,
-7,Ukraine,SoEXezpblAc,
-8,Australia,EUMCr1pnaMY,
-9,Serbia,FJTLKBOOE98,
-10,Malta,CW6mQLBh6Js,
-11,Czechia,6ea25aRGpLo,
-12,Bulgaria,J3oGYo_mekw,
-13,Croatia,vl7Jqnw10sU,
-14,United Kingdom,niMKvJ-Itq8,
-15,France,ujoCYrvvTYQ,
-16,Moldova,SViojHjNSzc,
-17,Finland,9bfwNIYb96Q,
-18,Poland,q78cnYIoF9Y,
-19,Lithuania,0H-PXnbhG7A,
-20,Sweden,ibbfS8iG450,
-21,Cyprus,TzSs51BiQrE,
-22,Italy,V406FAGkhyQ,
-23,Norway,MasllzWk_bQ,
-24,Romania,yn0YmI0dPb8,
-25,Austria,zPGP9ZphxiY,
+running_order,country,artist_name,song_title,youtube_id
+1,Denmark,Søren Torpegaard Lund,Før vi går hjem,xKzEP9dwoss
+2,Germany,Sarah Engels,Fire,AzvRc3eH_rA
+3,Israel,Noam Bettan,Michelle,xWCnWSoG8nI
+4,Belgium,Essyla,Dancing on the Ice,9sfI4g6DWTU
+5,Albania,Alis,Nân,b9AdRrA554o
+6,Greece,Akylas,Ferto,NGwNTd_DA9s
+7,Ukraine,Leléka,Ridnym,SoEXezpblAc
+8,Australia,Delta Goodrem,Eclipse,EUMCr1pnaMY
+9,Serbia,Lavina,Kraj mene,FJTLKBOOE98
+10,Malta,Aidan,Bella,CW6mQLBh6Js
+11,Czechia,Daniel Zizka,Crossroads,6ea25aRGpLo
+12,Bulgaria,Dara,Bangaranga,J3oGYo_mekw
+13,Croatia,Lelek,Andromeda,vl7Jqnw10sU
+14,United Kingdom,Look Mum No Computer,"Eins, Zwei, Drei",niMKvJ-Itq8
+15,France,Monroe,Regarde !,ujoCYrvvTYQ
+16,Moldova,Satoshi,"Viva, Moldova!",SViojHjNSzc
+17,Finland,Linda Lampenius and Pete Parkkonen,Liekinheitin,9bfwNIYb96Q
+18,Poland,Alicja,Pray,q78cnYIoF9Y
+19,Lithuania,Lion Ceccah,Sólo quiero más,0H-PXnbhG7A
+20,Sweden,Felicia,My System,ibbfS8iG450
+21,Cyprus,Antigoni,Jalla,TzSs51BiQrE
+22,Italy,Sal Da Vinci,Per sempre sì,V406FAGkhyQ
+23,Norway,Jonas Lovv,Ya Ya Ya,MasllzWk_bQ
+24,Romania,Alexandra Căpitănescu,Choke Me,yn0YmI0dPb8
+25,Austria,Cosmó,Tanzschein,zPGP9ZphxiY

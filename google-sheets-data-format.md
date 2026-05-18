@@ -59,13 +59,14 @@ A separate sheet (`running-order.csv`) lists the finalists in performance order 
 |--------|------|-------------|
 | `running_order` | integer | Position in the running order of the final (1 = performs first). Numbers may be non-contiguous if countries are eliminated after the running order is drawn — gaps preserve the originally drawn positions. |
 | `country` | string | The participating country. Matches values used in `recipient_country` in the votes sheet. |
+| `artist_name` | string | The performing artist or group. |
+| `song_title` | string | The title of the song being performed. |
 | `youtube_id` | string | YouTube video ID for the country's official music video (the `v=` parameter from a YouTube URL). Prefix with `https://www.youtube.com/watch?v=` to construct a full URL, or `https://www.youtube.com/embed/` to embed. |
-| `now_playing` | integer/empty | `1` if the song is currently being performed in the live show, empty otherwise. Empty cells read as `NULL` in SQL, so `WHERE now_playing = 1` selects the song currently on stage. At most one row should be set to `1` at a time. |
 
 ### Example Rows
 
-| running_order | country | youtube_id | now_playing |
-|---------------|---------|------------|-------------|
-| 1 | Luxembourg | DmVfJSRqgnI | |
-| 2 | Israel | xWCnWSoG8nI | 1 |
-| 4 | United Kingdom | niMKvJ-Itq8 | |
+| running_order | country | artist_name | song_title | youtube_id |
+|---------------|---------|-------------|------------|------------|
+| 1 | Luxembourg | Eva Marija | Mother Nature | DmVfJSRqgnI |
+| 2 | Israel | Noam Bettan | Michelle | xWCnWSoG8nI |
+| 4 | United Kingdom | Look Mum No Computer | Eins, Zwei, Drei | niMKvJ-Itq8 |
