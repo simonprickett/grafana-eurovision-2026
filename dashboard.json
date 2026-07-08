@@ -1,0 +1,3110 @@
+{
+  "apiVersion": "dashboard.grafana.app/v2",
+  "kind": "Dashboard",
+  "metadata": {
+    "name": "sist4kc",
+    "generation": 6,
+    "creationTimestamp": "2026-07-08T13:31:03Z",
+    "labels": {},
+    "annotations": {}
+  },
+  "spec": {
+    "annotations": [
+      {
+        "kind": "AnnotationQuery",
+        "spec": {
+          "query": {
+            "kind": "DataQuery",
+            "group": "grafana",
+            "version": "v0",
+            "spec": {},
+            "labels": {
+              "grafana.app/export-label": "grafana-1"
+            }
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "builtIn": true
+        }
+      }
+    ],
+    "cursorSync": "Off",
+    "description": "A dashboard visualizing the 2026 Eurovision Song Contest Final, held in Vienna Austria on 16th May 2026.",
+    "editable": true,
+    "elements": {
+      "panel-14": {
+        "kind": "Panel",
+        "spec": {
+          "id": 14,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 18000,
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT\n  artist_name\nFROM\n  A\nWHERE country = \"${country}\"",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^artist_name$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "yellow"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-15": {
+        "kind": "Panel",
+        "spec": {
+          "id": 15,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 18000,
+                        "scenarioId": "random_walk",
+                        "seriesCount": 1,
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT\n  song_title\nFROM\n  A\nWHERE country = \"${country}\"",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^song_title$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "yellow"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-16": {
+        "kind": "Panel",
+        "spec": {
+          "id": 16,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 18000,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT COUNT(*) + 1 AS country_rank\nFROM (\n  SELECT recipient_country, SUM(points) AS total_points\n  FROM A\n  GROUP BY recipient_country\n) AS all_totals\nWHERE total_points > (\n  SELECT SUM(points)\n  FROM A\n  WHERE recipient_country = \"${country}\"\n)",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^country_rank$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "mappings": [
+                    {
+                      "type": "value",
+                      "options": {
+                        "1": {
+                          "text": "1st",
+                          "color": "#ffd700",
+                          "index": 0
+                        },
+                        "2": {
+                          "text": "2nd",
+                          "color": "#c0c0c0",
+                          "index": 1
+                        },
+                        "3": {
+                          "text": "3rd",
+                          "color": "#cd7f32",
+                          "index": 2
+                        },
+                        "4": {
+                          "text": "4th",
+                          "index": 3
+                        },
+                        "5": {
+                          "text": "5th",
+                          "index": 4
+                        },
+                        "6": {
+                          "text": "6th",
+                          "index": 5
+                        },
+                        "7": {
+                          "text": "7th",
+                          "index": 6
+                        },
+                        "8": {
+                          "text": "8th",
+                          "index": 7
+                        },
+                        "9": {
+                          "text": "9th",
+                          "index": 8
+                        },
+                        "10": {
+                          "text": "10th",
+                          "index": 9
+                        },
+                        "11": {
+                          "text": "11th",
+                          "index": 10
+                        },
+                        "12": {
+                          "text": "12th",
+                          "index": 11
+                        },
+                        "13": {
+                          "text": "13th",
+                          "index": 12
+                        },
+                        "14": {
+                          "text": "14th",
+                          "index": 13
+                        },
+                        "15": {
+                          "text": "15th",
+                          "index": 14
+                        },
+                        "16": {
+                          "text": "16th",
+                          "index": 15
+                        },
+                        "17": {
+                          "text": "17th",
+                          "index": 16
+                        },
+                        "18": {
+                          "text": "18th",
+                          "index": 17
+                        },
+                        "19": {
+                          "text": "19th",
+                          "index": 18
+                        },
+                        "20": {
+                          "text": "20th",
+                          "index": 19
+                        },
+                        "21": {
+                          "text": "21st",
+                          "index": 20
+                        },
+                        "22": {
+                          "text": "22nd",
+                          "index": 21
+                        },
+                        "23": {
+                          "text": "23rd",
+                          "index": 22
+                        },
+                        "24": {
+                          "text": "24th",
+                          "index": 23
+                        },
+                        "25": {
+                          "text": "25th",
+                          "color": "red",
+                          "index": 24
+                        }
+                      }
+                    }
+                  ],
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "super-light-green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-17": {
+        "kind": "Panel",
+        "spec": {
+          "id": 17,
+          "title": "Points Awarded to ${country}",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT\n  CONCAT(voting_country, ' (', vote_type, ')') as name,\n  points\nFROM A\nWHERE recipient_country = \"${country}\"\n  AND points > 0\nORDER BY points DESC\nLIMIT 100",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "displayMode": "gradient",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 3000,
+                "minVizHeight": 10,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^points$/",
+                  "limit": 1000,
+                  "values": true
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "displayName": "",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-18": {
+        "kind": "Panel",
+        "spec": {
+          "id": 18,
+          "title": "Jury Points Given by ${country}",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT\n  recipient_country as name,\n  points\nFROM A\nWHERE voting_country = \"${country}\"\n  AND vote_type = 'jury'\n  AND points > 0\nORDER BY points DESC\nLIMIT 100",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "displayMode": "gradient",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 3000,
+                "minVizHeight": 10,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^points$/",
+                  "limit": 500,
+                  "values": true
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-19": {
+        "kind": "Panel",
+        "spec": {
+          "id": 19,
+          "title": "Televote Points Given by ${country}",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT\n  recipient_country as name,\n  points\nFROM A\nWHERE voting_country = \"${country}\"\n  AND vote_type = 'televote'\n  AND points > 0\nORDER BY points DESC\nLIMIT 100",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "displayMode": "gradient",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 3000,
+                "minVizHeight": 10,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^points$/",
+                  "limit": 500,
+                  "values": true
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-23": {
+        "kind": "Panel",
+        "spec": {
+          "id": 23,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 18000,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT recipient_country FROM A GROUP BY recipient_country ORDER BY SUM(points) DESC LIMIT 1",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^recipient_country$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "#ffd700"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-24": {
+        "kind": "Panel",
+        "spec": {
+          "id": 24,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "table",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "cellHeight": "sm",
+                "frameIndex": 1,
+                "showHeader": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "custom": {
+                    "align": "auto",
+                    "cellOptions": {
+                      "type": "auto"
+                    },
+                    "footer": {
+                      "reducers": []
+                    },
+                    "inspect": false
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-25": {
+        "kind": "Panel",
+        "spec": {
+          "id": 25,
+          "title": "Points Breakdown by Type",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 18000,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT recipient_country FROM A GROUP BY recipient_country ORDER BY SUM(points) DESC LIMIT 1",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT vote_type, SUM(points) AS total FROM A WHERE recipient_country IN (SELECT recipient_country FROM A GROUP BY recipient_country ORDER BY SUM(points) DESC LIMIT 1) GROUP BY vote_type",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "piechart",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "displayLabels": [
+                  "name",
+                  "percent"
+                ],
+                "legend": {
+                  "displayMode": "table",
+                  "overflow": "ellipsis",
+                  "placement": "right",
+                  "showLegend": false,
+                  "values": [
+                    "percent",
+                    "value"
+                  ]
+                },
+                "pieType": "pie",
+                "reduceOptions": {
+                  "calcs": [],
+                  "fields": "/total/",
+                  "values": true
+                },
+                "sort": "desc",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic",
+                    "fixedColor": "#73BF69"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "jury"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "#E05A00",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "televote"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "#FFB347",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-26": {
+        "kind": "Panel",
+        "spec": {
+          "id": 26,
+          "title": "Point Award Frequencies",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 18000,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT CAST(points AS CHAR) AS points, COUNT(*) AS count FROM A WHERE recipient_country IN (SELECT recipient_country FROM A GROUP BY recipient_country ORDER BY SUM(points) DESC LIMIT 1) AND points > 0 GROUP BY points ORDER BY CAST(points AS UNSIGNED) DESC",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "barchart",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "barRadius": 0,
+                "barWidth": 0.96,
+                "fullHighlight": false,
+                "groupWidth": 0.8,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "hidden",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "orientation": "horizontal",
+                "showValue": "never",
+                "stacking": "none",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                },
+                "xField": "time",
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "fixed",
+                    "fixedColor": "orange"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "fillOpacity": 80,
+                    "gradientMode": "hue",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "lineWidth": 1,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-27": {
+        "kind": "Panel",
+        "spec": {
+          "id": 27,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 18000,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT CONCAT(SUM(points), ' pts') AS total FROM A WHERE recipient_country IN (SELECT recipient_country FROM A GROUP BY recipient_country ORDER BY SUM(points) DESC LIMIT 1)",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^total$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-28": {
+        "kind": "Panel",
+        "spec": {
+          "id": 28,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 18000,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT LOWER(recipient_country) AS winning_country FROM A GROUP BY recipient_country ORDER BY SUM(points) DESC LIMIT 1",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "dalvany-image-panel",
+            "version": "5.0.0",
+            "spec": {
+              "options": {
+                "alt_field": "",
+                "autofit": false,
+                "baseUrl": "https://storage.googleapis.com/play-static-content/eurovision-2026/flag_",
+                "height": "75",
+                "icon_field": "winning_country",
+                "open_url": {
+                  "base_url": "",
+                  "enable": false,
+                  "metric_field": "",
+                  "open_in_tab": true,
+                  "suffix": ""
+                },
+                "overlay": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#66666620"
+                  },
+                  "field": "",
+                  "height": {
+                    "size": 5,
+                    "unit": "%"
+                  },
+                  "position": "Top right",
+                  "width": {
+                    "size": 5,
+                    "unit": "%"
+                  }
+                },
+                "shared_cross_hair": {
+                  "backgroundColor": "#FFFFFF10",
+                  "borderColor": "#FFFFFF20"
+                },
+                "singleFill": true,
+                "slideshow": {
+                  "duration": 5000,
+                  "enable": false,
+                  "infinite": true,
+                  "pauseOnHover": true,
+                  "transition": "Slide",
+                  "transition_duration": 1000
+                },
+                "suffix": ".png",
+                "tooltip": false,
+                "tooltip_date_elapsed": false,
+                "tooltip_field": "",
+                "tooltip_include_date": false,
+                "tooltip_include_field": true,
+                "underline": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#CCCCDCFF"
+                  },
+                  "bindings_field": "",
+                  "field": "",
+                  "text_align": "left",
+                  "text_size": "14"
+                },
+                "width": "75"
+              },
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-29": {
+        "kind": "Panel",
+        "spec": {
+          "id": 29,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 18000,
+                        "range": "running-order!A:E",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT A.youtube_id \nFROM A \nWHERE A.country = \n  (SELECT recipient_country \n   FROM B \n   GROUP BY recipient_country \n   ORDER BY SUM(points) DESC LIMIT 1\n  ) LIMIT 1",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "C",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "marcusolsson-dynamictext-panel",
+            "version": "6.3.0",
+            "spec": {
+              "options": {
+                "afterRender": "",
+                "content": "<div style=\"text-align:center\">\n  <a href=\"https://www.youtube.com/watch?v={{youtube_id}}\" target=\"_blank\">\n    <img src=\"https://img.youtube.com/vi/{{youtube_id}}/hqdefault.jpg\"\n    style=\"width:auto;height:auto;display:inline-block\">\n  </a>\n</div>",
+                "contentPartials": [],
+                "defaultContent": "The query didn't return any results.",
+                "editor": {
+                  "format": "auto",
+                  "language": "html"
+                },
+                "editors": [],
+                "externalStyles": [],
+                "helpers": "",
+                "renderMode": "everyRow",
+                "styles": "",
+                "wrap": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-3": {
+        "kind": "Panel",
+        "spec": {
+          "id": 3,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "columns": [],
+                        "data": "[{\"url\": \"https://storage.googleapis.com/play-static-content/eurovision-2026/REPLACEME_small.webp\"}]",
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "jq-backend",
+                        "root_selector": ".[] | {url: (.url | sub(\"REPLACEME\"; \"${country}\" | ascii_downcase | gsub(\" \"; \"_\")))}",
+                        "source": "inline",
+                        "type": "json",
+                        "url": "",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET"
+                        }
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "yesoreyeram-infinity-datasource-1",
+                        "grafana.app/export-datasource-name": "grafanacloud-infinity"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "dalvany-image-panel",
+            "version": "5.0.0",
+            "spec": {
+              "options": {
+                "alt_field": "",
+                "autofit": true,
+                "height": "75",
+                "icon_field": "url",
+                "open_url": {
+                  "base_url": "",
+                  "enable": false,
+                  "metric_field": "",
+                  "open_in_tab": true,
+                  "suffix": ""
+                },
+                "overlay": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#66666620"
+                  },
+                  "field": "",
+                  "height": {
+                    "size": 5,
+                    "unit": "%"
+                  },
+                  "position": "Top right",
+                  "width": {
+                    "size": 5,
+                    "unit": "%"
+                  }
+                },
+                "shared_cross_hair": {
+                  "backgroundColor": "#FFFFFF10",
+                  "borderColor": "#FFFFFF20"
+                },
+                "singleFill": true,
+                "slideshow": {
+                  "duration": 5000,
+                  "enable": false,
+                  "infinite": true,
+                  "pauseOnHover": true,
+                  "transition": "Slide",
+                  "transition_duration": 1000
+                },
+                "tooltip": false,
+                "tooltip_date_elapsed": false,
+                "tooltip_field": "",
+                "tooltip_include_date": false,
+                "tooltip_include_field": true,
+                "underline": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#CCCCDCFF"
+                  },
+                  "bindings_field": "",
+                  "field": "",
+                  "text_align": "left",
+                  "text_size": "14"
+                },
+                "width": "75"
+              },
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-30": {
+        "kind": "Panel",
+        "spec": {
+          "id": 30,
+          "title": "TODO Artist and Song",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 18000,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT recipient_country FROM A GROUP BY recipient_country ORDER BY SUM(points) DESC LIMIT 1",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^recipient_country$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "#ffd700"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-31": {
+        "kind": "Panel",
+        "spec": {
+          "id": 31,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "columns": [],
+                        "data": "[ { \"url\": \"https://storage.googleapis.com/play-static-content/eurovision-2026/eurovision_background.jpg\" } ]",
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "jq-backend",
+                        "range": false,
+                        "root_selector": "",
+                        "source": "inline",
+                        "type": "json",
+                        "url": "",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET"
+                        }
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "yesoreyeram-infinity-datasource-1",
+                        "grafana.app/export-datasource-name": "grafanacloud-infinity"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "dalvany-image-panel",
+            "version": "5.0.0",
+            "spec": {
+              "options": {
+                "alt_field": "",
+                "autofit": true,
+                "baseUrl": "https://storage.googleapis.com/play-static-content/eurovision-2026/eurovision_background.jpg",
+                "fallback": "https://storage.googleapis.com/play-static-content/eurovision-2026/eurovision_background.jpg",
+                "height": "75",
+                "icon_field": "",
+                "open_url": {
+                  "base_url": "",
+                  "enable": false,
+                  "metric_field": "",
+                  "open_in_tab": true,
+                  "suffix": ""
+                },
+                "overlay": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#66666620"
+                  },
+                  "field": "",
+                  "height": {
+                    "size": 5,
+                    "unit": "%"
+                  },
+                  "position": "Top right",
+                  "width": {
+                    "size": 5,
+                    "unit": "%"
+                  }
+                },
+                "shared_cross_hair": {
+                  "backgroundColor": "#FFFFFF10",
+                  "borderColor": "#FFFFFF20"
+                },
+                "singleFill": true,
+                "slideshow": {
+                  "duration": 5000,
+                  "enable": false,
+                  "infinite": true,
+                  "pauseOnHover": true,
+                  "transition": "Slide",
+                  "transition_duration": 1000
+                },
+                "tooltip": false,
+                "tooltip_date_elapsed": false,
+                "tooltip_field": "",
+                "tooltip_include_date": false,
+                "tooltip_include_field": true,
+                "underline": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#CCCCDCFF"
+                  },
+                  "bindings_field": "",
+                  "field": "",
+                  "text_align": "left",
+                  "text_size": "14"
+                },
+                "width": "75"
+              },
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-32": {
+        "kind": "Panel",
+        "spec": {
+          "id": 32,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "text",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "code": {
+                  "language": "plaintext",
+                  "showLineNumbers": false,
+                  "showMiniMap": false
+                },
+                "content": "# Eurovision 2026!\n\nTODO This will be the contest overview...",
+                "mode": "markdown"
+              },
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-4": {
+        "kind": "Panel",
+        "spec": {
+          "id": 4,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "columns": [],
+                        "data": "[{\"url\": \"https://storage.googleapis.com/play-static-content/eurovision-2026/flag_REPLACEME.png\"}]",
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "jq-backend",
+                        "root_selector": ".[] | {url: (.url | sub(\"REPLACEME\"; \"${country}\" | ascii_downcase | gsub(\" \"; \"_\")))}",
+                        "source": "inline",
+                        "type": "json",
+                        "url": "",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET"
+                        }
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "yesoreyeram-infinity-datasource-1",
+                        "grafana.app/export-datasource-name": "grafanacloud-infinity"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "dalvany-image-panel",
+            "version": "5.0.0",
+            "spec": {
+              "options": {
+                "alt_field": "",
+                "autofit": true,
+                "height": "75",
+                "icon_field": "url",
+                "open_url": {
+                  "base_url": "",
+                  "enable": false,
+                  "metric_field": "",
+                  "open_in_tab": true,
+                  "suffix": ""
+                },
+                "overlay": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#66666620"
+                  },
+                  "field": "",
+                  "height": {
+                    "size": 5,
+                    "unit": "%"
+                  },
+                  "position": "Top right",
+                  "width": {
+                    "size": 5,
+                    "unit": "%"
+                  }
+                },
+                "shared_cross_hair": {
+                  "backgroundColor": "#FFFFFF10",
+                  "borderColor": "#FFFFFF20"
+                },
+                "singleFill": true,
+                "slideshow": {
+                  "duration": 5000,
+                  "enable": false,
+                  "infinite": true,
+                  "pauseOnHover": true,
+                  "transition": "Slide",
+                  "transition_duration": 1000
+                },
+                "tooltip": false,
+                "tooltip_date_elapsed": false,
+                "tooltip_field": "",
+                "tooltip_include_date": false,
+                "tooltip_include_field": true,
+                "underline": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#CCCCDCFF"
+                  },
+                  "bindings_field": "",
+                  "field": "",
+                  "text_align": "left",
+                  "text_size": "14"
+                },
+                "width": "75"
+              },
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-5": {
+        "kind": "Panel",
+        "spec": {
+          "id": 5,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "yesoreyeram-infinity-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "columns": [],
+                        "data": "[]",
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "jq-backend",
+                        "root_selector": "[{country: \"${country}\"}]",
+                        "source": "inline",
+                        "type": "json",
+                        "url": "",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET"
+                        }
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "yesoreyeram-infinity-datasource-1",
+                        "grafana.app/export-datasource-name": "grafanacloud-infinity"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^country$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "purple"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-6": {
+        "kind": "Panel",
+        "spec": {
+          "id": 6,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 18000,
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT\n  youtube_id \nFROM\n  A\nWHERE \n  country = \"${country}\"",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "marcusolsson-dynamictext-panel",
+            "version": "6.3.0",
+            "spec": {
+              "options": {
+                "afterRender": "",
+                "content": "<a href=\"https://www.youtube.com/watch?v={{youtube_id}}\" target=\"_blank\">\n  <img src=\"https://img.youtube.com/vi/{{youtube_id}}/hqdefault.jpg\"\n  style=\"width:auto;height:auto;display:block\">\n</a>",
+                "contentPartials": [],
+                "defaultContent": "The query didn't return any results.",
+                "editor": {
+                  "format": "auto",
+                  "language": "html"
+                },
+                "editors": [
+                  "default"
+                ],
+                "externalStyles": [],
+                "helpers": "",
+                "renderMode": "everyRow",
+                "styles": "",
+                "wrap": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-7": {
+        "kind": "Panel",
+        "spec": {
+          "id": 7,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT\n  CONCAT(sum(points), ' pts') as points_total\nFROM\n  A\nWHERE recipient_country = \"${country}\"",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^points_total$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "mappings": [
+                    {
+                      "type": "value",
+                      "options": {
+                        "1 pts": {
+                          "text": "1 pt",
+                          "index": 0
+                        }
+                      }
+                    }
+                  ],
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "orange"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-9": {
+        "kind": "Panel",
+        "spec": {
+          "id": 9,
+          "title": "",
+          "description": "",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 300,
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "expression": "SELECT\n  running_order\nFROM\n  A\nWHERE country = \"${country}\"",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^running_order$/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "value",
+                "wideLayout": true
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "mappings": [
+                    {
+                      "type": "value",
+                      "options": {
+                        "1": {
+                          "text": "Order: 1st",
+                          "index": 0
+                        },
+                        "2": {
+                          "text": "Order: 2nd",
+                          "index": 1
+                        },
+                        "3": {
+                          "text": "Order: 3rd",
+                          "index": 2
+                        },
+                        "4": {
+                          "text": "Order: 4th",
+                          "index": 3
+                        },
+                        "5": {
+                          "text": "Order: 5th",
+                          "index": 4
+                        },
+                        "6": {
+                          "text": "Order: 6th",
+                          "index": 5
+                        },
+                        "7": {
+                          "text": "Order: 7th",
+                          "index": 6
+                        },
+                        "8": {
+                          "text": "Order: 8th",
+                          "index": 7
+                        },
+                        "9": {
+                          "text": "Order: 9th",
+                          "index": 8
+                        },
+                        "10": {
+                          "text": "Order: 10th",
+                          "index": 9
+                        },
+                        "11": {
+                          "text": "Order: 11th",
+                          "index": 10
+                        },
+                        "12": {
+                          "text": "Order: 12th",
+                          "index": 11
+                        },
+                        "13": {
+                          "text": "Order: 13th",
+                          "index": 12
+                        },
+                        "14": {
+                          "text": "Order: 14th",
+                          "index": 13
+                        },
+                        "15": {
+                          "text": "Order: 15th",
+                          "index": 14
+                        },
+                        "16": {
+                          "text": "Order: 16th",
+                          "index": 15
+                        },
+                        "17": {
+                          "text": "Order: 17th",
+                          "index": 16
+                        },
+                        "18": {
+                          "text": "Order: 18th",
+                          "index": 17
+                        },
+                        "19": {
+                          "text": "Order: 19th",
+                          "index": 18
+                        },
+                        "20": {
+                          "text": "Order: 20th",
+                          "index": 19
+                        },
+                        "21": {
+                          "text": "Order: 21st",
+                          "index": 20
+                        },
+                        "22": {
+                          "text": "Order: 22nd",
+                          "index": 21
+                        },
+                        "23": {
+                          "text": "Order: 23rd",
+                          "index": 22
+                        },
+                        "24": {
+                          "text": "Order: 24th",
+                          "index": 23
+                        },
+                        "25": {
+                          "text": "Order: 25th",
+                          "index": 24
+                        }
+                      }
+                    }
+                  ],
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "blue"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "thresholds"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "layout": {
+      "kind": "RowsLayout",
+      "spec": {
+        "rows": [
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Introduction",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 9,
+                        "height": 10,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-31"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 9,
+                        "y": 0,
+                        "width": 15,
+                        "height": 10,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-32"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Contest Overview",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": []
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Winner",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 6,
+                        "height": 6,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-28"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 6,
+                        "y": 0,
+                        "width": 18,
+                        "height": 6,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-23"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 6,
+                        "width": 6,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-27"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 6,
+                        "y": 6,
+                        "width": 10,
+                        "height": 10,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-29"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 16,
+                        "y": 6,
+                        "width": 8,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-26"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 16,
+                        "y": 13,
+                        "width": 8,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-25"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 6,
+                        "y": 16,
+                        "width": 10,
+                        "height": 4,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-30"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Full Results",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 12,
+                        "height": 8,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-24"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "${country}: Details",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": []
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Overview",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 8,
+                        "height": 3,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-5"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 8,
+                        "y": 0,
+                        "width": 16,
+                        "height": 3,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-14"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 3,
+                        "width": 4,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-4"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 4,
+                        "y": 3,
+                        "width": 4,
+                        "height": 7,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-16"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 8,
+                        "y": 3,
+                        "width": 8,
+                        "height": 11,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-3"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 16,
+                        "y": 3,
+                        "width": 8,
+                        "height": 11,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-6"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 10,
+                        "width": 4,
+                        "height": 6,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-7"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 4,
+                        "y": 10,
+                        "width": 4,
+                        "height": 6,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-9"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 8,
+                        "y": 14,
+                        "width": 16,
+                        "height": 2,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-15"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Points Awarded to ${country}",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 24,
+                        "height": 17,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-17"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "Points Given by ${country}",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 12,
+                        "height": 17,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-18"
+                        }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12,
+                        "y": 0,
+                        "width": 12,
+                        "height": 17,
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-19"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "links": [],
+    "liveNow": false,
+    "preload": false,
+    "tags": [],
+    "timeSettings": {
+      "timezone": "utc",
+      "from": "now-6h",
+      "to": "now",
+      "autoRefresh": "",
+      "autoRefreshIntervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "hideTimepicker": false,
+      "fiscalYearStartMonth": 0
+    },
+    "title": "Eurovision 2026!",
+    "variables": [
+      {
+        "kind": "QueryVariable",
+        "spec": {
+          "name": "country",
+          "current": {
+            "text": "",
+            "value": ""
+          },
+          "label": "Country",
+          "hide": "dontHide",
+          "refresh": "onDashboardLoad",
+          "skipUrlSync": false,
+          "query": {
+            "kind": "DataQuery",
+            "group": "grafana-googlesheets-datasource",
+            "version": "v0",
+            "spec": {
+              "cacheDurationSeconds": 18000,
+              "labelField": "country",
+              "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0",
+              "valueField": "country"
+            },
+            "labels": {
+              "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+              "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+            }
+          },
+          "regex": "",
+          "regexApplyTo": "value",
+          "sort": "alphabeticalAsc",
+          "definition": "",
+          "options": [],
+          "multi": true,
+          "includeAll": true,
+          "allowCustomValue": false
+        }
+      }
+    ]
+  }
+}
