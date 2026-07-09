@@ -3,7 +3,7 @@
   "kind": "Dashboard",
   "metadata": {
     "name": "sist4kc",
-    "generation": 9,
+    "generation": 12,
     "creationTimestamp": "2026-07-08T13:31:03Z",
     "labels": {},
     "annotations": {}
@@ -1750,7 +1750,7 @@
         "kind": "Panel",
         "spec": {
           "id": 30,
-          "title": "TODO Artist and Song",
+          "title": "",
           "description": "",
           "links": [],
           "data": {
@@ -1766,7 +1766,7 @@
                       "version": "v0",
                       "spec": {
                         "cacheDurationSeconds": 18000,
-                        "range": "voting!A:D",
+                        "range": "running-order!A:E",
                         "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
                       },
                       "labels": {
@@ -1783,10 +1783,31 @@
                   "spec": {
                     "query": {
                       "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
                       "group": "__expr__",
                       "version": "v0",
                       "spec": {
-                        "expression": "SELECT recipient_country FROM A GROUP BY recipient_country ORDER BY SUM(points) DESC LIMIT 1",
+                        "expression": "SELECT CONCAT(A.artist_name, ': ', A.song_title) AS label FROM A JOIN B ON A.country = B.recipient_country GROUP BY A.artist_name, A.song_title ORDER BY SUM(B.points) DESC LIMIT 1",
                         "type": "sql"
                       },
                       "labels": {
@@ -1794,7 +1815,7 @@
                         "grafana.app/export-datasource-name": "Expression"
                       }
                     },
-                    "refId": "B",
+                    "refId": "C",
                     "hidden": false
                   }
                 }
@@ -1818,7 +1839,7 @@
                   "calcs": [
                     "lastNotNull"
                   ],
-                  "fields": "/^recipient_country$/",
+                  "fields": "/^label$/",
                   "values": false
                 },
                 "showPercentChange": false,
