@@ -3,7 +3,7 @@
   "kind": "Dashboard",
   "metadata": {
     "name": "sist4kc",
-    "generation": 12,
+    "generation": 14,
     "creationTimestamp": "2026-07-08T13:31:03Z",
     "labels": {},
     "annotations": {}
@@ -2029,6 +2029,138 @@
           }
         }
       },
+      "panel-34": {
+        "kind": "Panel",
+        "spec": {
+          "id": 34,
+          "title": "Podium Finishers",
+          "description": "Points totals for the top 3 finishers",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 18000,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT recipient_country, SUM(points) AS total_pts FROM A GROUP BY recipient_country ORDER BY total_pts DESC LIMIT 3",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "rowsToFields",
+                  "spec": {
+                    "options": {
+                      "nameField": "recipient_country",
+                      "valueField": "total_pts"
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "displayMode": "lcd",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 300,
+                "minVizHeight": 16,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "text"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "max": 600,
+                  "thresholds": {
+                    "mode": "percentage",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 60,
+                        "color": "orange"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "continuous-GrYlRd"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
       "panel-4": {
         "kind": "Panel",
         "spec": {
@@ -2766,10 +2898,10 @@
                                   "x": 6,
                                   "y": 6,
                                   "width": 10,
-                                  "height": 10,
+                                  "height": 4,
                                   "element": {
                                     "kind": "ElementReference",
-                                    "name": "panel-29"
+                                    "name": "panel-30"
                                   }
                                 }
                               },
@@ -2789,6 +2921,32 @@
                               {
                                 "kind": "GridLayoutItem",
                                 "spec": {
+                                  "x": 6,
+                                  "y": 10,
+                                  "width": 10,
+                                  "height": 10,
+                                  "element": {
+                                    "kind": "ElementReference",
+                                    "name": "panel-29"
+                                  }
+                                }
+                              },
+                              {
+                                "kind": "GridLayoutItem",
+                                "spec": {
+                                  "x": 0,
+                                  "y": 13,
+                                  "width": 6,
+                                  "height": 7,
+                                  "element": {
+                                    "kind": "ElementReference",
+                                    "name": "panel-34"
+                                  }
+                                }
+                              },
+                              {
+                                "kind": "GridLayoutItem",
+                                "spec": {
                                   "x": 16,
                                   "y": 13,
                                   "width": 8,
@@ -2796,19 +2954,6 @@
                                   "element": {
                                     "kind": "ElementReference",
                                     "name": "panel-25"
-                                  }
-                                }
-                              },
-                              {
-                                "kind": "GridLayoutItem",
-                                "spec": {
-                                  "x": 6,
-                                  "y": 16,
-                                  "width": 10,
-                                  "height": 4,
-                                  "element": {
-                                    "kind": "ElementReference",
-                                    "name": "panel-30"
                                   }
                                 }
                               }
