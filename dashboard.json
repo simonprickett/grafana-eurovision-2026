@@ -3,7 +3,7 @@
   "kind": "Dashboard",
   "metadata": {
     "name": "sist4kc",
-    "generation": 14,
+    "generation": 27,
     "creationTimestamp": "2026-07-08T13:31:03Z",
     "labels": {},
     "annotations": {}
@@ -879,88 +879,6 @@
                   },
                   "color": {
                     "mode": "thresholds"
-                  }
-                },
-                "overrides": []
-              }
-            }
-          }
-        }
-      },
-      "panel-24": {
-        "kind": "Panel",
-        "spec": {
-          "id": 24,
-          "title": "",
-          "description": "",
-          "links": [],
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "query": {
-                      "kind": "DataQuery",
-                      "group": "grafana-googlesheets-datasource",
-                      "version": "v0",
-                      "spec": {
-                        "cacheDurationSeconds": 300,
-                        "range": "voting!A:D",
-                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
-                      },
-                      "labels": {
-                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
-                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
-                      }
-                    },
-                    "refId": "A",
-                    "hidden": false
-                  }
-                }
-              ],
-              "transformations": [],
-              "queryOptions": {}
-            }
-          },
-          "vizConfig": {
-            "kind": "VizConfig",
-            "group": "table",
-            "version": "13.2.0-28666480772",
-            "spec": {
-              "options": {
-                "cellHeight": "sm",
-                "frameIndex": 1,
-                "showHeader": true
-              },
-              "fieldConfig": {
-                "defaults": {
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "value": 0,
-                        "color": "green"
-                      },
-                      {
-                        "value": 80,
-                        "color": "red"
-                      }
-                    ]
-                  },
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "custom": {
-                    "align": "auto",
-                    "cellOptions": {
-                      "type": "auto"
-                    },
-                    "footer": {
-                      "reducers": []
-                    },
-                    "inspect": false
                   }
                 },
                 "overrides": []
@@ -2161,6 +2079,436 @@
           }
         }
       },
+      "panel-35": {
+        "kind": "Panel",
+        "spec": {
+          "id": 35,
+          "title": "Full Results",
+          "description": "Results using the combined jury and televote scores.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT country, jury, televote FROM (SELECT recipient_country AS country, SUM(CASE WHEN vote_type = 'jury' THEN points ELSE 0 END) AS jury, SUM(CASE WHEN vote_type = 'televote' THEN points ELSE 0 END) AS televote FROM A GROUP BY recipient_country) AS sub ORDER BY jury + televote DESC LIMIT 100",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "barchart",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "barRadius": 0,
+                "barWidth": 0.97,
+                "fullHighlight": false,
+                "groupWidth": 0.55,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "never",
+                "stacking": "normal",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                },
+                "xTickLabelRotation": -45,
+                "xTickLabelSpacing": 0
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "fillOpacity": 80,
+                    "gradientMode": "hue",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "lineWidth": 0,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "jury"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "Jury"
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "#E040FB",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "televote"
+                    },
+                    "properties": [
+                      {
+                        "id": "displayName",
+                        "value": "Televote"
+                      },
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "#00E5FF",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "panel-36": {
+        "kind": "Panel",
+        "spec": {
+          "id": 36,
+          "title": "Popular Vote Results",
+          "description": "Results using only the televotes from the public.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT recipient_country AS country, SUM(CASE WHEN vote_type = 'televote' THEN points ELSE 0 END) AS total FROM A GROUP BY recipient_country ORDER BY total DESC LIMIT 100",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "rowsToFields",
+                  "spec": {
+                    "disabled": false,
+                    "options": {
+                      "nameField": "country",
+                      "valueField": "total"
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "displayMode": "lcd",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 300,
+                "minVizHeight": 16,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "max": 350,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-37": {
+        "kind": "Panel",
+        "spec": {
+          "id": 37,
+          "title": "Jury Vote Results",
+          "description": "Results using only the jury votes.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-googlesheets-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "cacheDurationSeconds": 300,
+                        "range": "voting!A:D",
+                        "spreadsheet": "1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "grafana-googlesheets-datasource-1",
+                        "grafana.app/export-datasource-name": "grafana-googlesheets-datasource"
+                      }
+                    },
+                    "refId": "A",
+                    "hidden": true
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "__expr__",
+                      "version": "v0",
+                      "spec": {
+                        "app": "grafana-assistant-app",
+                        "expression": "SELECT recipient_country AS country, SUM(CASE WHEN vote_type = 'jury' THEN points ELSE 0 END) AS total FROM A GROUP BY recipient_country ORDER BY total DESC LIMIT 100",
+                        "type": "sql"
+                      },
+                      "labels": {
+                        "grafana.app/export-label": "__expr__-1",
+                        "grafana.app/export-datasource-name": "Expression"
+                      }
+                    },
+                    "refId": "B",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [
+                {
+                  "kind": "Transformation",
+                  "group": "rowsToFields",
+                  "spec": {
+                    "disabled": false,
+                    "options": {
+                      "nameField": "country",
+                      "valueField": "total"
+                    }
+                  }
+                }
+              ],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "bargauge",
+            "version": "13.2.0-28666480772",
+            "spec": {
+              "options": {
+                "displayMode": "lcd",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 300,
+                "minVizHeight": 16,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "max": 350,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
       "panel-4": {
         "kind": "Panel",
         "spec": {
@@ -2975,11 +3323,63 @@
                                 "spec": {
                                   "x": 0,
                                   "y": 0,
-                                  "width": 12,
-                                  "height": 8,
+                                  "width": 24,
+                                  "height": 13,
                                   "element": {
                                     "kind": "ElementReference",
-                                    "name": "panel-24"
+                                    "name": "panel-35"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "kind": "TabsLayoutTab",
+                      "spec": {
+                        "title": "Popular Vote",
+                        "layout": {
+                          "kind": "GridLayout",
+                          "spec": {
+                            "items": [
+                              {
+                                "kind": "GridLayoutItem",
+                                "spec": {
+                                  "x": 0,
+                                  "y": 0,
+                                  "width": 24,
+                                  "height": 30,
+                                  "element": {
+                                    "kind": "ElementReference",
+                                    "name": "panel-36"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "kind": "TabsLayoutTab",
+                      "spec": {
+                        "title": "Jury Vote",
+                        "layout": {
+                          "kind": "GridLayout",
+                          "spec": {
+                            "items": [
+                              {
+                                "kind": "GridLayoutItem",
+                                "spec": {
+                                  "x": 0,
+                                  "y": 0,
+                                  "width": 24,
+                                  "height": 30,
+                                  "element": {
+                                    "kind": "ElementReference",
+                                    "name": "panel-37"
                                   }
                                 }
                               }
