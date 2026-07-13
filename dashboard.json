@@ -3,7 +3,7 @@
   "kind": "Dashboard",
   "metadata": {
     "name": "sist4kc",
-    "generation": 27,
+    "generation": 29,
     "creationTimestamp": "2026-07-08T13:31:03Z",
     "labels": {},
     "annotations": {}
@@ -93,7 +93,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -194,7 +194,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -294,7 +294,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -847,7 +847,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -970,7 +970,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "piechart",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "displayLabels": [
@@ -1113,7 +1113,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "barchart",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "barRadius": 0,
@@ -1248,7 +1248,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -1745,7 +1745,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -1928,7 +1928,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "text",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "code": {
@@ -1936,7 +1936,7 @@
                   "showLineNumbers": false,
                   "showMiniMap": false
                 },
-                "content": "# Eurovision 2026!\n\nTODO This will be the contest overview...",
+                "content": "# Eurovision 2026!\n\nThis Grafana Dashboard shows a full breakdown of the results and voting for the 2026 Eurovision Song Contest Final.  The event was held in Vienna, Austria on 16th May 2026.  25 countries competed for the votes of professional juries and the viewing public.\n\nTake an interactive tour of this dashboard by clicking the \"?\" icon in the top right of your screen.\n\nThe jury and public from each country each award points to 10 other countries: 12 points for the best in their opinion down to 1 for the 10th best (and 0 for the others).  The winner is the country with the highest combined points total.\n\nThis dashboard lets you relive the event - explore who voted for who (or didn't!), which countries won the popular vote and which impressed the judges most. You can also watch the official performance of each song by clicking on the YouTube links.\n\nThe dashboard is built with CSV data and Grafana's [Google Sheets datasource](https://grafana.com/grafana/plugins/grafana-googlesheets-datasource/), with [SQL Expressions](https://grafana.com/docs/grafana/latest/visualizations/panels-visualizations/query-transform-data/sql-expressions/) for transforming and joining data. It uses a tabbed layout and repeating rows ([documentation](https://grafana.com/docs/grafana/latest/visualizations/dashboards/build-dashboards/create-dashboard/dashboard-groupings/)) - select all the countries using the dropdown or just the ones you're interested in.\n\nClick [here](https://docs.google.com/spreadsheets/d/1q0rR7luGqQUcb5spvhLaNMTe756NHyIXf6GktMpzEx0/view) to view the raw Google Sheet data for the competition. Note that the data lives in two tabs in this sheet: one containing information about the finalists, their songs and running order.  The second tab contains the voting data.\n\n",
                 "mode": "markdown"
               },
               "fieldConfig": {
@@ -2020,7 +2020,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "bargauge",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "displayMode": "lcd",
@@ -2141,7 +2141,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "barchart",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "barRadius": 0,
@@ -2325,7 +2325,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "bargauge",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "displayMode": "lcd",
@@ -2454,7 +2454,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "bargauge",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "displayMode": "lcd",
@@ -2681,7 +2681,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -2882,7 +2882,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
@@ -2992,7 +2992,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.2.0-28666480772",
+            "version": "13.2.0-28852654685",
             "spec": {
               "options": {
                 "colorMode": "background",
